@@ -1,0 +1,7 @@
+{% if blogposts.hits.total > 0 %}
+{% for blogpost in blogposts %}
+    <div>{{ blogpost.title }}</div>
+{% endfor %}
+{% else %}
+    <div></div>
+{% endif %}

@@ -1,0 +1,21 @@
+{% extends "elasticsearchapp/header.html" %}
+
+{% block content %}
+<h3>Search</h3>
+{% csrf_token %}
+<input type="text" id="search" name="search"/>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div id="search-results"></div>
+    </div>
+    <div class="col-sm-1">
+            <!-- empty -->
+        </div>
+    <div class="col-sm-5">
+        {% for blogpost in object_list %}
+            <div>{{ blogpost.title }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
